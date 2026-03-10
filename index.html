@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather App</title>
+  <link rel ="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap" role="application" aria-label="Weather app">
+    <header>
+      <div class="title">🌤 Weather App</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div>
+        <div class="search" role="search">
+          <input id="locationInput" type="search" placeholder="Enter location (city, post code, lat,long...)" aria-label="Location input" />
+          <button id="searchBtn" class="btn">Get weather</button>
+          <button id="geoBtn" class="btn secondary" title="Use device location">Use my location</button>
+        </div>
+
+        <div id="message" class="small" style="margin-top:10px"></div>
+
+        <div id="resultCard" class="result" aria-live="polite" style="margin-top:14px;display:none">
+          <div class="location">
+            <img id="icon" alt="weather icon" width="64" height="64" style="display:block" />
+            <div>
+              <div class="loc-name" id="locName"></div>
+              <div class="localtime" id="localTime"></div>
+            </div>
+          </div>
+          <div class="temp" id="tempText"></div>
+          <div class="cond">
+            <div id="conditionText" style="font-weight:700"></div>
+          </div>
+          <div class="meta" style="margin-top:10px">
+            <div>Feels: <span id="feelsLike"></span></div>
+            <div>Humidity: <span id="humidity"></span>%</div>
+            <div>Wind: <span id="wind"></span></div>
+            <div>AQI (if available): <span id="aqi"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side">
+        <div class="hint">Quick tips</div>
+        <ul style="margin-top:8px">
+          <li class="small">You can enter a city name, postal code, or coordinates (lat,lon).</li>
+          <li class="small">Click <strong>Use my location</strong> to try device geolocation (prompts browser permission).</li>
+          <li class="small">This app uses WeatherAPI. If you host via HTTPS ensure the API call uses HTTPS to avoid mixed-content blocks.</li>
+        </ul>
+        <div style="margin-top:12px" class="small">Built with plain HTML, CSS and JavaScript.</div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
